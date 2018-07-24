@@ -27,7 +27,7 @@ Sliding Window가 모든 단어를 학습하면 Iteration 1회가 마무리 됨.
 
 1. The Skip-gram Model – 1.Hierarchical Softmax
 
-2.Negative Sampling
+1. The Skip-gram Model – 2.Negative Sampling
 Word2Vec은 Output Layer에서 출력하는 Score에 Softmax를 적용하여 확률 값으로 변환
 -> 정답셋과 비교 -> Backpropagation 시행
 But, Softmax를 적용할 시에 계산량이 많으므로 전체 단어를 대상으로 구하지 않고, 일부 단어만 뽑아서 계산함. -> Negative Sampling의 개념
@@ -36,7 +36,7 @@ Negative Sampling의 절차:
 2. 이를 정답단어와 합쳐 전체 단어처럼 Softmax 확률을 구함
 즉, 윈도우 사이즈가 5일 경우 최대 25개 단어를 대상으로만 Softmax 확률을 계산하고, 파라미터 업데이트도 25개 대상으로만 이루어짐.
 
-3.Subsampling of Frequent Words
+1. The Skip-gram Model – 3.Subsampling of Frequent Words
 단어 수가 늘어날수록 계산량이 증폭하는 구조임
 Therefore, 말뭉치에서 자주 등장하는 단어는 학습량을 확률적인 방식으로 줄임.
 (등장 빈도만큼 업데이트 될 기회가 많기 때문임)
